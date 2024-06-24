@@ -20,6 +20,12 @@ class Base(DeclarativeBase):
 
 # ======= Start Writing Models Below =============
 
+"""
+A house belonging to a faction will be established within a region. 
+Warriors are associated with each house.
+
+"""
+
 
 class Region(Base):
     __tablename__ = 'region'

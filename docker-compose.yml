@@ -1,0 +1,22 @@
+
+x-env: &pg_env
+#  POSTGRES_DB: app_d
+#  POSTGRES_DRIVER: postgresql+psycopg
+#  POSTGRES_HOST: localhost
+#  POSTGRES_USER: app_user
+#  POSTGRES_USE_SSL: False
+  POSTGRES_PASSWORD: password
+
+services:
+
+  postgres:
+    image: postgres:16.1
+    ports:
+      - "5432:5432"
+    environment:
+      <<: *pg_env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
